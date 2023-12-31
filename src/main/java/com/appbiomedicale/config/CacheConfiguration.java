@@ -48,6 +48,24 @@ public class CacheConfiguration {
             createCache(cm, com.appbiomedicale.domain.User.class.getName());
             createCache(cm, com.appbiomedicale.domain.Authority.class.getName());
             createCache(cm, com.appbiomedicale.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.appbiomedicale.domain.Medecin.class.getName());
+            createCache(cm, com.appbiomedicale.domain.Medecin.class.getName() + ".medecinPatients");
+            createCache(cm, com.appbiomedicale.domain.Patient.class.getName());
+            createCache(cm, com.appbiomedicale.domain.Patient.class.getName() + ".mesures");
+            createCache(cm, com.appbiomedicale.domain.Patient.class.getName() + ".videos");
+            createCache(cm, com.appbiomedicale.domain.Patient.class.getName() + ".medecinPatients");
+            createCache(cm, com.appbiomedicale.domain.Patient.class.getName() + ".boitierPatients");
+            createCache(cm, com.appbiomedicale.domain.Boitier.class.getName());
+            createCache(cm, com.appbiomedicale.domain.Boitier.class.getName() + ".boitierCapteurs");
+            createCache(cm, com.appbiomedicale.domain.Boitier.class.getName() + ".boitierPatients");
+            createCache(cm, com.appbiomedicale.domain.Capteur.class.getName());
+            createCache(cm, com.appbiomedicale.domain.Capteur.class.getName() + ".boitierCapteurs");
+            createCache(cm, com.appbiomedicale.domain.Mesure.class.getName());
+            createCache(cm, com.appbiomedicale.domain.Video.class.getName());
+            createCache(cm, com.appbiomedicale.domain.ExtraUser.class.getName());
+            createCache(cm, com.appbiomedicale.domain.MedecinPatient.class.getName());
+            createCache(cm, com.appbiomedicale.domain.BoitierPatient.class.getName());
+            createCache(cm, com.appbiomedicale.domain.BoitierCapteur.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

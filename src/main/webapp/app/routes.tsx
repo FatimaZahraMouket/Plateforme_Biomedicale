@@ -38,7 +38,7 @@ const AppRoutes = () => {
           <Route
             path="*"
             element={
-              <PrivateRoute hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]}>
+              <PrivateRoute hasAnyAuthorities={[AUTHORITIES.ADMIN,AUTHORITIES.USER,AUTHORITIES.SECRETAIRE,AUTHORITIES.MEDECIN]}>
                 <Account />
               </PrivateRoute>
             }
@@ -61,7 +61,7 @@ const AppRoutes = () => {
         <Route
           path="*"
           element={
-            <PrivateRoute hasAnyAuthorities={[AUTHORITIES.USER]}>
+            <PrivateRoute hasAnyAuthorities={[AUTHORITIES.ADMIN,AUTHORITIES.USER,AUTHORITIES.SECRETAIRE,AUTHORITIES.MEDECIN]}>
               <EntitiesRoutes />
             </PrivateRoute>
           }
