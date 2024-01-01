@@ -380,20 +380,16 @@ export const BoitierPatient = () => {
           <div className="container mt-3">
 
             <div className="alert alert-info">Futur data</div>
-
             {(jsonDataListResult) ? (<TemperatureChart data={newData} />) : (<p>no data</p>)
 
             }
-
             <br/>
-
-
 
           </div>
         </ModalBody>
         <ModalFooter>
           <button className="btn btn-info" onClick={handleButtonClick}>
-            Train and Predict
+           Predict
 
           </button>
           <Button color="secondary" onClick={handleClosea}>
@@ -462,10 +458,10 @@ export const BoitierPatient = () => {
                 ),
               },
               {
-                name: 'Preduction',
+                name: 'Prediction',
                 cell: (row) => (
                   <Button color="primary" onClick={toggleActivea(row.patients)}>
-                    Preduction
+                    Prediction
 
                   </Button>
                 ),

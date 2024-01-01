@@ -33,14 +33,9 @@ const EntitiesMenu = () => {
           <Translate contentKey="global.menu.entities.mesure" />
         </MenuItem>
       </PrivateRoute>
-      <PrivateRoute hasAnyAuthorities={[AUTHORITIES.ADMIN]}>
+      <PrivateRoute hasAnyAuthorities={[AUTHORITIES.USER]}>
         <MenuItem icon="asterisk" to="/video">
           <Translate contentKey="global.menu.entities.video" />
-        </MenuItem>
-      </PrivateRoute>
-      <PrivateRoute hasAnyAuthorities={[AUTHORITIES.ADMIN]}>
-        <MenuItem icon="asterisk" to="/extra-user">
-          <Translate contentKey="global.menu.entities.extraUser" />
         </MenuItem>
       </PrivateRoute>
       <PrivateRoute hasAnyAuthorities={[AUTHORITIES.MEDECIN]}>

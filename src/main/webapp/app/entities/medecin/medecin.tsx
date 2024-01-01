@@ -70,9 +70,6 @@ export const Medecin = () => {
                 Email
               </th>
               <th>
-                Nationalite
-              </th>
-              <th>
                 Adresse
               </th>
               <th />
@@ -126,7 +123,6 @@ export const Medecin = () => {
 
                   <td>{emaill}</td> {/* Affichez le nom du médecin ici */}
 
-                  <td>{nationalitte}</td> {/* Affichez le nom du médecin ici */}
                   <td>{addressee}</td> {/* Affichez le nom du médecin ici */}
 
                   <td className="text-end">

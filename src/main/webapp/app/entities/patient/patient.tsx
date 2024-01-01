@@ -415,8 +415,8 @@ export const Patient = () => {
           columns={columns}
           data={searchTerm ? searchedData : processedPatientList}
           pagination
-          paginationPerPage={3}
-          paginationRowsPerPageOptions={[3, 10, 15]}
+          paginationPerPage={10}
+          paginationRowsPerPageOptions={[10, 20, 30]}
           theme="searchTheme"
           subHeader
           subHeaderComponent={

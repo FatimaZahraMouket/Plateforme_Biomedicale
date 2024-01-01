@@ -10,6 +10,11 @@
         Added the entity Patient.
     -->
     <changeSet id="20231222215449-1" author="jhipster">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="patient"/>
+            </not>
+        </preConditions>
         <createTable tableName="patient">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -39,7 +44,8 @@
                   file="config/liquibase/fake-data/patient.csv"
                   separator=";"
                   tableName="patient"
-                  usePreparedStatements="true">
+                  usePreparedStatements="true"
+        >
             <column name="id" type="numeric"/>
             <column name="profession" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->

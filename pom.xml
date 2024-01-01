@@ -586,7 +586,7 @@
                             </platforms>
                         </from>
                         <to>
-                            <image>appbiomedicale:latest</image>
+                            <image>fatimazahramouket/app_biomedicale_db_local_finale_f1:latest</image>
                         </to>
                         <container>
                             <entrypoint>
