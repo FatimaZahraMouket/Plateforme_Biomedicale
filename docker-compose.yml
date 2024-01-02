@@ -34,9 +34,9 @@ services:
       networks:
         - my-network_nmms
 
-    backend:
+    app_bio:
       image: hafidnid/app_biomedicale_db_local_finale_f:latest
-      container_name: backend
+      container_name: app_bio
       restart: always
       depends_on:
         - mysql
