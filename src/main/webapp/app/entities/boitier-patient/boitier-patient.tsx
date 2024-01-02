@@ -364,7 +364,7 @@ export const BoitierPatient = () => {
   return (
     <div>
       <Modal isOpen={modal} toggle={toggleActive} size="lg" >
-        <ModalHeader toggle={toggleActive}>Affecter un boitier </ModalHeader>
+        <ModalHeader>Affecter un boitier </ModalHeader>
         <ModalBody>
           <BoitierPatientUpdate selectedPatient={selectedPatient} />
         </ModalBody>
@@ -399,7 +399,7 @@ export const BoitierPatient = () => {
       </Modal>
 
       <h2 id="boitier-patient-heading" data-cy="BoitierPatientHeading">
-        <Translate contentKey="appBiomedicaleApp.boitierPatient.home.title">Boitier Patients</Translate>
+        <Translate contentKey="appBiomedicaleApp.patient.home.title">Liste Patients</Translate>
       </h2>
       <div className="table-responsive">
         {listePatients && listePatients.length > 0 ? (
@@ -498,7 +498,7 @@ export const BoitierPatient = () => {
           />
         ) : !loading ? (
           <div className="alert alert-warning">
-            <Translate contentKey="appBiomedicaleApp.boitierPatient.home.notFound">No Boitier Patients found</Translate>
+            <Translate contentKey="appBiomedicaleApp.patient.home.notFound">No Boitier Patients found</Translate>
           </div>
         ) : null}
 

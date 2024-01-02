@@ -155,6 +155,8 @@ export const BoitierPatientUpdate: React.FC<BoitierPatientUpdateProps> = ({ sele
         patients: existingBoitierPatientId1.patients,
       };
       dispatch(updateEntity(updatedEntity))
+      navigate('/boitier-patient');
+      handleClose()
     }
     if (patientHasBoitier) {
       const updatedEntity = {
@@ -172,6 +174,8 @@ export const BoitierPatientUpdate: React.FC<BoitierPatientUpdateProps> = ({ sele
         patients: selectedPatient,
       };
       dispatch(createEntity(newEntity));
+      navigate('/boitier-patient');
+      handleClose()
     } else {
       const newEntity = {
         dateDebut: formattedDateDebut,
@@ -180,9 +184,11 @@ export const BoitierPatientUpdate: React.FC<BoitierPatientUpdateProps> = ({ sele
         patients: selectedPatient,
       };
       dispatch(createEntity(newEntity));
+      navigate('/boitier-patient');
+      handleClose()
     }
 
-    navigate('/boitier-patient');
+
 
   };
 

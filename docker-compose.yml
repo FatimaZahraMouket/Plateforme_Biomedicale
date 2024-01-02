@@ -1,15 +1,5 @@
 version: '3'
 services:
-    mysql:
-        image: hafidnid/mysql:8.0.30
-        restart: unless-stopped
-        environment:
-          - MYSQL_ALLOW_EMPTY_PASSWORD=1
-        ports:
-          - "3306:3306"
-        networks:
-          - my-network_nmms
-
     rabbitmq:
       image: hafidnid/rabbitmq:3.12.9-management
       hostname: rabbit
@@ -34,29 +24,20 @@ services:
       networks:
         - my-network_nmms
 
-    app_bio:
-      image: hafidnid/app_biomedicale_db_local_finale_f:latest
-      container_name: app_bio
+    app_biomedicale:
+      image: hafidnid/app_biomedicale_db_deploy_finale_f2:latest
+      container_name: app_biomedicale
       restart: always
-      depends_on:
-        - mysql
-        - rabbitmq
       ports:
         - "8080:8080"
       environment:
-        SPRING_RABBITMQ_HOST: rabbitmq 
-        SPRING_APPLICATION_JSON: '{
-            "spring.datasource.url"  : "jdbc:mysql://mysql:3306/appbiomedica?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true",
-            "spring.datasource.username" : "root",
-            "spring.datasource.password" : "",
-            "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQLDialect",
-            "spring.jpa.hibernate.ddl-auto" : "none"}'
+        - SPRING_RABBITMQ_HOST=rabbitmq 
+      depends_on:
+        - rabbitmq
       networks:
         - my-network_nmms
 
-volumes:
-  db:
-
+    
 networks:
   my-network_nmms:
     driver: bridge
