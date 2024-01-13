@@ -3,9 +3,8 @@
 
 This application was generated using JHipster 7.9.3, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.9.3](https://www.jhipster.tech/documentation-archive/v7.9.3).
 
-## Project description
+## Introduction
 
-# Introduction
 ## Project architecture
 The software architecture of the BioData platform is designed with distinct components to ensure system efficiency and functionality. On the server side, Spring Boot simplifies the development of standalone Java applications and facilitates the creation of a RESTful API for structured communication with the ReactJS client. Relational databases are seamlessly managed using Spring Boot and Hibernate. Data collected undergoes processing by machine learning algorithms, generating valuable medical predictions. On the client side, ReactJS provides interactive user interfaces with reusable components and efficient state management for dynamic updates. Security is enhanced by Spring Security, integrated on the server side, offering advanced authentication and authorization management. The data collection process utilizes the Arduino board equipped with sensors, transmitting data to the server via protocols like HTTP or MQTT. For asynchronous messaging, RabbitMQ is employed, providing a robust infrastructure for communication between components. Lastly, the ARIMA statistical model is employed for the analysis and forecasting of time series, contributing to informed decision-making based on historical medical data.
 ![architecture](images/architecture.jpeg)
