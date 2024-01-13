@@ -40,7 +40,7 @@ optimal experience on various devices, including mobile devices. This user-
 centric approach ensures that the platform is accessible to a wide range of
 users, regardless of their computer skills.
 ## Project-Interfaces
-![authentification](images/authentification.jpg)
+![authentification](images/authentification.JPG)
 
 ## Project Structure
 
