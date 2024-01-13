@@ -32,7 +32,7 @@ useEffect(() => {
   <Row className="justify-content-center">
         <Col md="8">
           <h2 data-cy="boitierDetailsHeading">
-            <Translate contentKey="appBiomedicaleApp.boitier.detail.title">Boitier</Translate>
+           Arduino board
           </h2>
           <div className="d-flex mb-4">
             <Col md="6" className="justify-content-center align-items-center">
@@ -53,13 +53,13 @@ useEffect(() => {
                     <dd>{boitierEntityy.type}</dd>
                     <dt>
             <span id="ref">
-              <Translate contentKey="appBiomedicaleApp.boitier.ref">Ref</Translate>
+              Reference
             </span>
                     </dt>
                     <dd>{boitierEntityy.ref}</dd>
                     <dt>
             <span id="nbrBranche">
-              <Translate contentKey="appBiomedicaleApp.boitier.nbrBranche">Nbr Branche</Translate>
+             Number of branches
             </span>
                     </dt>
                     <dd>{boitierEntityy.nbrBranche}</dd>

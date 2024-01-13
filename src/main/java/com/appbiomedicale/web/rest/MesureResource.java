@@ -148,15 +148,13 @@ public class MesureResource {
     /**
      * {@code GET  /mesures} : get all the mesures.
      *
-     * @param pageable the pagination information.
+     //* @param pageable the pagination information.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of mesures in body.
      */
     @GetMapping("/mesures")
-    public ResponseEntity<List<Mesure>> getAllMesures(@org.springdoc.api.annotations.ParameterObject Pageable pageable) {
-        log.debug("REST request to get a page of Mesures");
-        Page<Mesure> page = mesureRepository.findAll(pageable);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
-        return ResponseEntity.ok().headers(headers).body(page.getContent());
+    public List<Mesure> getAllMesures() {
+        log.debug("REST request to get all Mesures");
+        return mesureRepository.findAll();
     }
 
     /**

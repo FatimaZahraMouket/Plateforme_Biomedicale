@@ -1,6 +1,46 @@
+
 # appbiomedicale
 
 This application was generated using JHipster 7.9.3, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.9.3](https://www.jhipster.tech/documentation-archive/v7.9.3).
+
+## Project description
+
+# Introduction
+## Project architecture
+The software architecture of the BioData platform is designed with distinct components to ensure system efficiency and functionality. On the server side, Spring Boot simplifies the development of standalone Java applications and facilitates the creation of a RESTful API for structured communication with the ReactJS client. Relational databases are seamlessly managed using Spring Boot and Hibernate. Data collected undergoes processing by machine learning algorithms, generating valuable medical predictions. On the client side, ReactJS provides interactive user interfaces with reusable components and efficient state management for dynamic updates. Security is enhanced by Spring Security, integrated on the server side, offering advanced authentication and authorization management. The data collection process utilizes the Arduino board equipped with sensors, transmitting data to the server via protocols like HTTP or MQTT. For asynchronous messaging, RabbitMQ is employed, providing a robust infrastructure for communication between components. Lastly, the ARIMA statistical model is employed for the analysis and forecasting of time series, contributing to informed decision-making based on historical medical data.
+![architecture](images/architecture.jpeg)
+## Project functionalities
+The BioData software system is crafted to meet the increasing demands in
+the healthcare sector, making the most of advancements in biomedical tech-
+nologies. Its main goal is to empower healthcare professionals, allowing them
+to gather and view real-time biomedical data, providing immediate access to
+their patients’ health information. Additionally, the system seeks to simplify
+the handling of this data, making it easier for healthcare professionals to
+understand and make informed medical decisions.
+In this initiative, several essential features have been highlighted. Firstly,
+there is a focus on secure authentication and user management, enabling
+healthcare professionals to register, log in, and manage their personal de-
+tails. Regarding the collection and visualization of biomedical data, the
+platform ensures the real-time collection of data from various sensors, in-
+cluding Arduino sensors, and offers a graphical interface for efficient visual
+interpretation.
+The manipulation of biomedical data is a critical aspect of the system, aiming
+to streamline these data for easier understanding by healthcare profession-
+als. Simultaneously, advanced analysis tools will be integrated, empowering
+healthcare professionals to make informed medical decisions and leverage
+predictions of the patient’s condition based on data collected by medical
+devices.
+Patient management is also central, allowing healthcare professionals to as-
+sign medical devices to specific patients, facilitating real-time medical moni-
+toring. From an administrative standpoint, administrators will handle tasks
+such as adding, modifying, and deleting users, as well as managing medical
+devices and associated sensors.
+Finally, the user interface will be designed to be user-friendly, ensuring an
+optimal experience on various devices, including mobile devices. This user-
+centric approach ensures that the platform is accessible to a wide range of
+users, regardless of their computer skills.
+## Project-Interfaces
+![authentification](images/authentification.jpg)
 
 ## Project Structure
 

@@ -48,7 +48,7 @@ const CodeModal = ({  patient, nombrecapteur, capteurs, isOpen, toggle }) => {
 const BoitierDetailModal = ({ boitier, isOpen, toggle }) => {
   return (
     <Modal isOpen={isOpen} toggle={toggle} size="lg">
-      <ModalHeader toggle={toggle}>Detail Boitier</ModalHeader>
+      <ModalHeader toggle={toggle}>Details of the Arduino board</ModalHeader>
       <ModalBody>
         <BoitierDetail boitierEntityy={boitier} />
       </ModalBody>
@@ -276,17 +276,18 @@ export const BoitierPatient = () => {
   const [startDate, setStartDate] = useState('');
   const [jsonDataList, setJsonDataList] = useState([]);
   const [jsonDataListResult, setJsonDataListResult] = useState([]);
+  const [newData, setNewData] = useState([]);
   const [prediction, setPrediction] = useState(null);
 
   const downloadCSV = (patient) => {
-    // Filter data by patient_id and type
     const filteredData = mesureList
       .filter(entry => entry.patient.id === patient.id && entry.type === "Temperature")
       .map(({ date, valeur }) => ({ date, temperature: valeur }));
-    console.log(filteredData)
     setJsonDataList(filteredData);
-
-    // Convert filtered data to CSV format
+    console.log("mesureList");
+    console.log(mesureList);
+    setNewData(filteredData);
+    //hona rr
 
   };
 
@@ -324,12 +325,44 @@ export const BoitierPatient = () => {
           const prediction = response.data && response.data.prediction;
           if (prediction !== undefined) {
             setPrediction(prediction);
+            console.log("prediction");
+            console.log(prediction);
             const formattedPrediction = prediction.map(entry => {
               const originalDate = new Date(entry.date);
-              const formattedDate = originalDate.toISOString().split('T')[0];
-              return { date: formattedDate, temperature: entry.temperature , color: "red"};
+              // Specify the types for each property in the options object
+              const options: Intl.DateTimeFormatOptions = {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit'
+              };
+              const formattedDate = originalDate.toLocaleDateString('en-US', options).replace(/\//g, '-');
+              return { date: formattedDate, temperature: entry.temperature, color: 'orange' };
             });
-            setJsonDataListResult(formattedPrediction);
+            const formattedPredictionFuture = prediction.slice(-3).map(entry => {
+              const originalDate = new Date(entry.date);
+
+              // Specify the types for each property in the options object
+              const options: Intl.DateTimeFormatOptions = {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit'
+              };
+
+              const formattedDate = originalDate.toLocaleDateString('en-US', options).replace(/\//g, '-');
+
+              return { date: formattedDate, temperature: entry.temperature, color: 'red' };
+            });
+
+            console.log("formattedPredictionFuture");
+            console.log(formattedPredictionFuture);
+            console.log("dabaaaaaa");
+            console.log(prediction);
+
+            setJsonDataListResult(formattedPredictionFuture);
+            setNewData(formattedPrediction);
+
+            //hona rr
+            console.log("formattedPrediction");
             console.log(formattedPrediction);
           } else {
             setTimeout(pollResult, 1000);
@@ -343,10 +376,8 @@ export const BoitierPatient = () => {
 
   };
 
-  const newData = [
-    ...jsonDataList,
-    ...jsonDataListResult
-  ];
+  //setnewData(...jsonDataList,...jsonDataListResult);
+
   const handleButtonClick = () => {
     // Execute the function after a 500ms delay
     setTimeout(() => {
@@ -378,9 +409,8 @@ export const BoitierPatient = () => {
         <ModalHeader >Prediction </ModalHeader>
         <ModalBody>
           <div className="container mt-3">
-
-            <div className="alert alert-info">Futur data</div>
-            {(jsonDataListResult) ? (<TemperatureChart data={newData} />) : (<p>no data</p>)
+            {(jsonDataListResult) ? (<TemperatureChart data={newData}  />
+            ) : (<p>no data</p>)
 
             }
             <br/>
@@ -388,8 +418,8 @@ export const BoitierPatient = () => {
           </div>
         </ModalBody>
         <ModalFooter>
-          <button className="btn btn-info" onClick={handleButtonClick}>
-           Predict
+          <button className="btn btn-primary" onClick={handleButtonClick}>
+            Predict
 
           </button>
           <Button color="secondary" onClick={handleClosea}>
@@ -505,7 +535,7 @@ export const BoitierPatient = () => {
       </div>
       { selectedBoitier && (
         <BoitierDetailModal boitier={selectedBoitier} isOpen={isModalOpen} toggle={toggleModal} />
-        )}
+      )}
 
       <CodeModal patient={patient} nombrecapteur={nombreCapteur} capteurs={capteurs} isOpen={isCodeModalOpen} toggle={() => setIsCodeModalOpen(!isCodeModalOpen)} />
 
