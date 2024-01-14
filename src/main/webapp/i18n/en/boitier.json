@@ -2,25 +2,25 @@
   "appBiomedicaleApp": {
     "boitier": {
       "home": {
-        "title": "Boitiers",
+        "title": "Arduino Board",
         "refreshListLabel": "Refresh list",
-        "createLabel": "Create a new Boitier",
+        "createLabel": "Create a new Arduino Board",
         "createOrEditLabel": "Create or edit a Boitier",
-        "notFound": "No Boitiers found"
+        "notFound": "No Arduino Board found"
       },
-      "created": "A new Boitier is created with identifier {{ param }}",
-      "updated": "A Boitier is updated with identifier {{ param }}",
-      "deleted": "A Boitier is deleted with identifier {{ param }}",
+      "created": "A new Arduino Board is created with identifier {{ param }}",
+      "updated": "A BArduino Board is updated with identifier {{ param }}",
+      "deleted": "A Arduino Board is deleted with identifier {{ param }}",
       "delete": {
-        "question": "Are you sure you want to delete Boitier {{ id }}?"
+        "question": "Are you sure you want to delete Arduino Board {{ id }}?"
       },
       "detail": {
-        "title": "Boitier"
+        "title": "Arduino Board"
       },
       "id": "ID",
       "type": "Type",
-      "ref": "Ref",
-      "nbrBranche": "Nbr Branche",
+      "ref": "Reference",
+      "nbrBranche": "Number Branches",
       "boitierCapteurs": "Boitier Capteurs",
       "boitierPatients": "Boitier Patients"
     }

@@ -240,7 +240,7 @@ export const Patient = () => {
       width: '200px', // Ajustez la largeur selon vos besoins
     },
     {
-      name: 'Médecin',
+      name: 'Medecin',
       selector: (row: any) => row.extraName,
       sortable: true,
       width: '160px', // Ajustez la largeur selon vos besoins

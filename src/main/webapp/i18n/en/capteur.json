@@ -2,28 +2,28 @@
   "appBiomedicaleApp": {
     "capteur": {
       "home": {
-        "title": "Capteurs",
+        "title": "Sensors",
         "refreshListLabel": "Refresh list",
-        "createLabel": "Create a new Capteur",
-        "createOrEditLabel": "Create or edit a Capteur",
-        "notFound": "No Capteurs found"
+        "createLabel": "Create a new Sensor",
+        "createOrEditLabel": "Create or edit a Sensors",
+        "notFound": "No Sensors found"
       },
-      "created": "A new Capteur is created with identifier {{ param }}",
-      "updated": "A Capteur is updated with identifier {{ param }}",
-      "deleted": "A Capteur is deleted with identifier {{ param }}",
+      "created": "A new Sensor is created with identifier {{ param }}",
+      "updated": "A Sensor is updated with identifier {{ param }}",
+      "deleted": "A Sensor is deleted with identifier {{ param }}",
       "delete": {
-        "question": "Are you sure you want to delete Capteur {{ id }}?"
+        "question": "Are you sure you want to delete Sensor {{ id }}?"
       },
       "detail": {
-        "title": "Capteur"
+        "title": "Sensors"
       },
       "id": "ID",
       "type": "Type",
       "reference": "Reference",
       "resolution": "Resolution",
-      "photo": "Photo",
-      "valeurMin": "Valeur Min",
-      "valeurMax": "Valeur Max",
+      "photo": "Image",
+      "valeurMin": "Min Value",
+      "valeurMax": "Max Value",
       "boitierCapteurs": "Boitier Capteurs"
     }
   }

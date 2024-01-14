@@ -455,7 +455,7 @@ export const BoitierPatient = () => {
                 sortFunction: sortFunctions.patientsSort,
               },
               {
-                name: 'Boitiers',
+                name: 'Arduino Board',
                 cell: (row) => (
                   listePatientsBoitiers.find(
                     (element) => element.patients && element.patients.id === row.patients.id && element.dateFin === '0001-01-01'

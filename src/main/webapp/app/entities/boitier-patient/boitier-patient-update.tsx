@@ -215,7 +215,7 @@ export const BoitierPatientUpdate: React.FC<BoitierPatientUpdateProps> = ({ sele
       <Row className="justify-content-center">
         <Col md="8">
           <h4 id="appBiomedicaleApp.boitierPatient.home.createOrEditLabel" data-cy="BoitierPatientCreateUpdateHeading">
-            Choisir un boitier
+            Choosing an Arduino board
           </h4>
         </Col>
       </Row>
@@ -239,7 +239,7 @@ export const BoitierPatientUpdate: React.FC<BoitierPatientUpdateProps> = ({ sele
                 id="boitier-patient-boitiers"
                 name="boitiers"
                 data-cy="boitiers"
-                label={translate('appBiomedicaleApp.boitierPatient.boitiers')}
+                label="Arduino"
                 type="select"
                 onChange={handleBoitierSelection}
               >
@@ -255,10 +255,10 @@ export const BoitierPatientUpdate: React.FC<BoitierPatientUpdateProps> = ({ sele
               {boitierCapteurList.length > 0 && (
                 <div className="mb-3">
                   {boitiersCapteurs && (
-                    <h6 className="card-title">Le Boitier :  {boitiersCapteurs}</h6>
+                    <h6 className="card-title">The arduino: {boitiersCapteurs}</h6>
                   )}
                   <h6>
-                    Les capteurs associés au boîtier sélectionné :</h6>
+                    The sensors associated with the selected Arduino:</h6>
 
                   <Carousel responsive={responsive}
                             swipeable={true}

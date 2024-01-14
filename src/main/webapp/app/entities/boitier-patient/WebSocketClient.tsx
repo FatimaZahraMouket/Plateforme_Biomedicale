@@ -102,9 +102,9 @@ const WebSocketClient: React.FC<WebSocketClientProps> = ({ Patient, isCodeModalO
           }} else if (sensorKey === 'COM7') {
             if (capteur.capteurs.type === "capteur de la frequence cardiaque") {
             if (capteur.capteurs.valeurMax < receivedValue) {
-              toast.error('The heart rate is very high');
+              //toast.error('The heart rate is very high');
             } else if (capteur.capteurs.valeurMin > receivedValue) {
-              toast.error('The heart rate is very low');
+              //toast.error('The heart rate is very low');
             }}
           }
 

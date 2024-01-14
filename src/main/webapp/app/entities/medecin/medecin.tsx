@@ -63,7 +63,7 @@ export const Medecin = () => {
                 <Translate contentKey="appBiomedicaleApp.medecin.specialite">Specialite</Translate>
               </th>
               <th>
-                Nom médecin
+              Full Name
               </th>
 
               <th>
