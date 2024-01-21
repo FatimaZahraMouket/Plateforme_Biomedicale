@@ -107,7 +107,6 @@ const WebSocketClient: React.FC<WebSocketClientProps> = ({ Patient, isCodeModalO
               //toast.error('The heart rate is very low');
             }}
           }
-
       }
     }
       console.log(nombre);
