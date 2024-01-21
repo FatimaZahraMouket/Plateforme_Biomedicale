@@ -41,7 +41,7 @@ users, regardless of their computer skills.
 ## Project-Interfaces
 ![authentification](images/authentification.JPG)
 
-## Project Structure
+## Project
 
 Node is required for generation and recommended for development. `package.json` is always generated for a better development experience with prettier, commit hooks, scripts and so on.
 
