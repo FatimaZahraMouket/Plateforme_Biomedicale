@@ -32,9 +32,9 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://localhost:3306/appbiomedica?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
-    username: root
-    password:
+    url: jdbc:mysql://bf9cezpcgfajp4hxhfvg-mysql.services.clever-cloud.com/bf9cezpcgfajp4hxhfvg?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+    username: ukftrorq2nqknpps
+    password: ZnLCae1bl4yJ8ueaY2zU
     hikari:
       poolName: Hikari
       auto-commit: false

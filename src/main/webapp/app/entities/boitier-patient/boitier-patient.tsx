@@ -281,12 +281,27 @@ export const BoitierPatient = () => {
 
   const downloadCSV = (patient) => {
     const filteredData = mesureList
-      .filter(entry => entry.patient.id === patient.id && entry.type === "Temperature")
+      .filter(entry => entry.patient.id == patient.id && entry.type === "Temperature")
       .map(({ date, valeur }) => ({ date, temperature: valeur }));
-    setJsonDataList(filteredData);
-    console.log("mesureList");
-    console.log(mesureList);
-    setNewData(filteredData);
+
+// Utilisation de Set pour obtenir des dates uniques
+    const uniqueDatesSet = new Set(filteredData.map(entry => entry.date));
+
+// Convertir l'ensemble en tableau si nécessaire
+    const uniqueDatesArray = Array.from(uniqueDatesSet);
+
+// Créer un tableau d'objets avec une seule valeur de température pour chaque date unique
+    const uniqueTemperatureData = uniqueDatesArray.map(date => {
+      const matchingEntry = filteredData.find(entry => entry.date === date);
+      return { date, temperature: matchingEntry.temperature };
+    });
+
+    setJsonDataList(uniqueTemperatureData);
+
+    console.log("Temperature values for unique dates:");
+    console.log(uniqueTemperatureData);
+
+    setNewData(uniqueTemperatureData);
     //hona rr
 
   };

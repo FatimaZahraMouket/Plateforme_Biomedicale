@@ -1,43 +1,42 @@
 version: '3'
 services:
-    rabbitmq:
-      image: hafidnid/rabbitmq:3.12.9-management
-      hostname: rabbit
-      container_name: rabbitmq 
-      restart: always
-      environment:
-        RABBITMQ_ERLANG_COOKIE: rabbitcookie
-      ports:
-        - "15672:15672"
-        - "5672:5672"
-      networks:
-        - my-network_nmms
+  rabbitmq:
+    image: hafidnid/rabbitmq:3.12.9-management
+    hostname: rabbit
+    container_name: rabbitmq
+    restart: always
+    environment:
+      RABBITMQ_ERLANG_COOKIE: rabbitcookie
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    networks:
+      - my-network_nmms
 
-    model-server:
-      image: hafidnid/model_image:latest
-      container_name: model-server
-      restart: always
-      ports:
-        - "6000:6000"
-      depends_on:
-        - rabbitmq
-      networks:
-        - my-network_nmms
+  model_ai-server:
+    image: hafidnid/model_ai_fvn:latest
+    container_name: model_ai-server
+    restart: always
+    ports:
+      - "6000:6000"
+    depends_on:
+      - rabbitmq
+    networks:
+      - my-network_nmms
 
-    app_biomedicale:
-      image: hafidnid/app_biomedicale_db_deploy_finale_f2:latest
-      container_name: app_biomedicale
-      restart: always
-      ports:
-        - "8080:8080"
-      environment:
-        - SPRING_RABBITMQ_HOST=rabbitmq 
-      depends_on:
-        - rabbitmq
-      networks:
-        - my-network_nmms
+  app_biomedicale__nmm:
+    image: hafidnid/app_biomedicale_db_local_finale_f4:latest
+    container_name: app_biomedicale__nmm
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_RABBITMQ_HOST=rabbitmq
+    depends_on:
+      - rabbitmq
+    networks:
+      - my-network_nmms
 
-    
 networks:
   my-network_nmms:
     driver: bridge

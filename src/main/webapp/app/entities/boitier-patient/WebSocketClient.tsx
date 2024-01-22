@@ -83,7 +83,7 @@ const WebSocketClient: React.FC<WebSocketClientProps> = ({ Patient, isCodeModalO
       return;
     } else {
       entity = {
-        type: sensorKey === 'COM7' ? 'Temperature' : 'frequence cardiaque',
+        type: sensorKey === 'COM7' ? 'frequence cardiaque' : 'Temperature',
         valeur: receivedValue,
         date: formattedDateDebut,
         patient: Patient,
