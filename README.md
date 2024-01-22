@@ -40,6 +40,19 @@ centric approach ensures that the platform is accessible to a wide range of
 users, regardless of their computer skills.
 ## Project-Interfaces
 ![authentification](images/authentification.JPG)
+## Comptes d'Accès
+
+### Compte Admin
+- **Nom d'utilisateur:** admin
+- **Mot de passe:** admin
+
+### Compte Médecin
+- **Nom d'utilisateur:** faty
+- **Mot de passe:** user
+
+### Compte Secrétaire
+- **Nom d'utilisateur:** salma
+- **Mot de passe:** user
 
 ## Project
 
@@ -88,19 +101,6 @@ specifying a newer version in [package.json](package.json). You can also run `np
 Add the `help` flag on any command to see how you can use it. For example, `npm help update`.
 
 The `npm run` command will list all of the scripts available to run for this project.
-## Comptes d'Accès
-
-### Compte Admin
-- **Nom d'utilisateur:** admin
-- **Mot de passe:** admin
-
-### Compte Médecin
-- **Nom d'utilisateur:** faty
-- **Mot de passe:** user
-
-### Compte Secrétaire
-- **Nom d'utilisateur:** salma
-- **Mot de passe:** user
 
 ### PWA Support
 
