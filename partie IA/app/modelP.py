@@ -3,8 +3,6 @@ import pandas as pd
 from statsmodels.tsa.arima.model import ARIMA
 import pika
 from matplotlib import pyplot
-from sklearn.metrics import mean_squared_error
-from math import sqrt
 
 EXCHANGE_NAME = 'prediction_exchangesa'
 QUEUE_NAME = 'arima-result-queue'
@@ -25,7 +23,7 @@ def train_and_predict_arima(start_date, csv_path):
 
     # Fit ARIMA model
     order = (1, 1, 1)  # You may need to tune these parameters based on your data
-    model = ARIMA(df['temperature'], order=order)
+    model = ARIMA(df['temperature'], order=order,seasonal_order=(5, 1, 1, 12), enforce_stationarity=False, enforce_invertibility=False)
     result = model.fit()
 
     # Forecast future temperatures
@@ -61,8 +59,8 @@ def train_and_predict_arima(start_date, csv_path):
 ####
 def train_arima(df_train):
     # Adjust order as needed
-    order = (5, 1, 0)
-    model = ARIMA(df_train['temperature'], order=order)
+    order = (1, 1, 1)
+    model = ARIMA(df_train['temperature'], order=order,seasonal_order=(5, 1, 1, 12), enforce_stationarity=False, enforce_invertibility=False)
     model_fit = model.fit()
     return model_fit
 # Forecast using the trained ARIMA model
@@ -94,7 +92,7 @@ def callback(ch, method, properties, body):
         #prediction_message = json.dumps({"prediction": prediction_dict})
         #########
         # Read only the necessary columns
-        df1 = pd.read_csv("temperature_data.csv", usecols=['date', 'temperature'], parse_dates=['date'])
+        df1 = pd.read_csv("temperature_da.csv", usecols=['date', 'temperature'], parse_dates=['date'])
         # Set 'date' as the index
         df1.set_index('date', inplace=True)
         # Train ARIMA model

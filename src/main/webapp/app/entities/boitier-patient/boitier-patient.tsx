@@ -302,7 +302,6 @@ export const BoitierPatient = () => {
     console.log(uniqueTemperatureData);
 
     setNewData(uniqueTemperatureData);
-    //hona rr
 
   };
 
