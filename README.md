@@ -38,9 +38,10 @@ Finally, the user interface will be designed to be user-friendly, ensuring an
 optimal experience on various devices, including mobile devices. This user-
 centric approach ensures that the platform is accessible to a wide range of
 users, regardless of their computer skills.
-## Project-Interfaces
-![authentification](images/authentification.JPG)
+
 ## Comptes d'Accès
+
+Cette section fournit les informations d'authentification pour accéder aux différents comptes de la plateforme.
 
 ### Compte Admin
 - **Nom d'utilisateur:** admin
@@ -53,6 +54,7 @@ users, regardless of their computer skills.
 ### Compte Secrétaire
 - **Nom d'utilisateur:** salma
 - **Mot de passe:** user
+
 
 ## Project
 
